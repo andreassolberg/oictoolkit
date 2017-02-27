@@ -1,6 +1,13 @@
-# oictoolkit
+# OpenID Connect Toolkit
+
+## Run development locally
+
+```
+NODE_ENV=development npm start
+```
 
 
+## Build for docker
 
 To build docker image
 
@@ -13,6 +20,8 @@ kubectl apply -f etc-kube/objects.yaml
 gcloud compute firewall-rules create oictoolkit --allow=tcp:30601
 
 ```
+
+## Configure keypairs
 
 Generating a RSA keypair:
 
