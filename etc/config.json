@@ -1,0 +1,15 @@
+{
+    "http": {
+        "enforceHTTPS": false,
+        "port": 8080
+	},
+	"dataporten": {
+        "enableAuthentication": true,
+		"clientID": "xxxx",
+		"clientSecret": "__override_with_env_vars__",
+        "sessionkey": "__override_with_env_vars__",
+		"callbackURL": "http://localhost:8080/auth/dataporten/callback",
+		"_callbackURL": "http://127.0.0.1:8080/auth/dataporten/callback"
+	}
+
+}

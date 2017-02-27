@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: oictoolkit
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: oictoolkit
+    spec:
+      containers:
+        - name: oictoolkit
+          image: 'eu.gcr.io/turnkey-cocoa-720/oictoolkit:0.1.1'
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10M
+            limits:
+              cpu: 75m
+              memory: 200M
+          env: []
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+      restartPolicy: Always
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: oictoolkit
+spec:
+  selector:
+    app: oictoolkit
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: NodePort

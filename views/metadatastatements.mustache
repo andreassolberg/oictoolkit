@@ -1,0 +1,75 @@
+{{> header}}
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="jumbotron uninett-color-lightBlue">
+
+                <h1>{{ pagetitle }}</h1>
+                <p>Resources for learning, understanding and developing OpenID Connect Fedartion.</p>
+
+                <p>Metadata Statements are fundamental building blocks of trust in OpenID Connect Federation.</p>
+
+            </div>
+
+
+            <div class="uninett-color-white uninett-padded gutter">
+                <h2>Trust root(s) - JWKS</h2>
+                <p>Pick and choose your trust roots. These are the public keys used in the samples below.</p>
+                {{#allKeys}}
+                    <pre style="">{{ . }}</pre>
+                {{/allKeys}}
+
+            </div>
+
+
+            <div class="uninett-color-white uninett-padded gutter">
+
+                {{#mslistdata}}
+
+                    <h2>Metadata statement</h2>
+                    <p>Available paths:</p>
+                    <ol>
+                        {{#pathsJSON}}
+                            <li><pre>{{.}}</pre></li>
+                        {{/pathsJSON}}
+                    </ol>
+
+                    {{> MetadataStatement}}
+
+                {{/mslistdata}}
+<!--
+            <pre style="">Paths:{{ paths }}</pre>
+
+                <h2>The Metadata statement</h2>
+
+                {{#ms}}
+                    {{> MetadataStatement}}
+                {{/ms}}
+
+
+                <p>
+                    Debug view:
+                </p>
+                <pre style="">{{ mss }}</pre>
+
+
+
+            <pre style="">{{ mslistdataJSON }}</pre>
+-->
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+{{> footer}}
