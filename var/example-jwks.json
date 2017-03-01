@@ -4,5 +4,11 @@
         "kid": "https://edugain.org/",
         "n": "l7rt1yRvbiOKg8XeP_ICo0yDif-kOLWkUL5FAWKVWhWWAdnN2o1t_otuBX1xLeItE24he4qGHBzh2PQ4SRqau6ZVzx4-aJFzGZSbw6SswVXPlFR5dRkJMn4wxFOOVsSUnltO4K27X2Pf-gwlLFdH4q4QTNU5U8ijr76BnuUThdBYrxf2UQT7DDz6cPHaRdOUbuj_Ids9CmV6HyzdIFOfBx7DKS8o2fqH9Fa6-PKdMtDJiZ1KfjgstiNB04JAbQ1RI9Bl-No6NTUcZbD7Q0JF8iqY3Hogo9J_mL-SgQFGgwAoxQKoNeLk7uLHc69yIlyBJegrVkmHUKehIp3OZ5CW9w",
         "e": "AQAB"
+    },
+    {
+      "kty": "RSA",
+      "kid": "https://kalmar.org/",
+      "n": "pO4fh3R8yBPjjpA1keMg2nDCD7PaDraqK5Wn4O8J_rtFgg_Beh1UQf6Y1yyVOkPDgk9zIvxtBLHA7_AHiEvC0_pHSzJNlppVhujUh8yVJrxaYDqwIM1h4J8xoqhkPjELkGX4_jOrQ3DUTXSk0BkGeeyxX8n-i7uRA8UGCyZ-74WxCQK4pK-0nFi_60pXX87bypsTxxtXP2AwE_WAlH_7wiShz5uyyYMGRxe5TxEo3NZuyMplz1KOnpU4YEUAofvjfafjrFSgvUpbVa4WXeoWkbV2S_fIL5sa3EEKO7qKmTHhwxNcCvxnlQBxKN8ZzUlRD0nzmCAuEZVBg2QIWjfPHQ",
+      "e": "AQAB"
     }
 ]

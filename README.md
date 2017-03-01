@@ -18,7 +18,6 @@ bin/build.sh
 ```
 kubectl apply -f etc-kube/objects.yaml
 gcloud compute firewall-rules create oictoolkit --allow=tcp:30601
-
 ```
 
 ## Configure keypairs
