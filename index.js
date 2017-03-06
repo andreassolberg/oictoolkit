@@ -5,10 +5,10 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const Dataporten = require('passport-dataporten');
-const mustacheExpress = require('mustache-express');
+const dust = require('express-dustjs');
 const morgan = require('morgan');
 const nconf = require('nconf');
-// const fs = require('fs');
+const path = require('path');
 
 const App = require('./lib/App');
 const Health = require('./lib/Health').Health;
@@ -49,10 +49,17 @@ app.set('json spaces', 2);
 app.set('port', nconf.get('http:port'));
 app.enable('trust proxy');
 
-app.engine('mustache', mustacheExpress(__dirname + '/views/partials', '.mustache'));
-app.set('view engine', 'mustache');
-app.set('views', __dirname + '/views');
+// app.engine('mustache', mustacheExpress(__dirname + '/views/partials', '.mustache'));
+// app.set('view engine', 'mustache');
+// app.set('views', __dirname + '/views');
 app.disable('view cache');
+
+// Use Dustjs as Express view engine
+app.engine('dust', dust.engine({
+  useHelpers: true
+}));
+app.set('view engine', 'dust');
+app.set('views', path.resolve(__dirname, './views'));
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({

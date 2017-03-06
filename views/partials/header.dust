@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="uninett-theme/ico/favicon.ico">
-	<title>{{ title }}</title>
+	<title>{title}</title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="/static/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -49,25 +49,25 @@
 
 			</div>
 			<div class="navbar-department">
-				<div class="department">{{ title }}</div>
+				<div class="department">{title}</div>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 
 
-                    {{#menu}}
-                        <li {{#active}}class="active"{{/active}}><a href="{{ href }}">{{ t }}</a></li>
-                    {{/menu}}
+                    {#menu}
+                        <li {#active}class="active"{/active}><a href="{href}">{t}</a></li>
+                    {/menu}
 
 <!--
 					<li class="active"><a href="/">Front page</a></li>
 					<li><a href="/ms">Generate</a></li>
                     <li><a href="/decode">Decode</a></li>
 -->
-                    {{#user}}
+                    {#user}
                         <li class="dropdown pull-right"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img style="margin-top: -20px; max-height: 40px; max-width: 40px; border: 0px solid #b6b6b6; box-shadow: 1px 1px 2px #aaa;" class="img-circle img-thumbnail" src="{{user.photos.0}} " alt="Profile photo">
-                            {{user.displayName}}
+                            <img style="margin-top: -20px; max-height: 40px; max-width: 40px; border: 0px solid #b6b6b6; box-shadow: 1px 1px 2px #aaa;" class="img-circle img-thumbnail" src="{user.photos.0} " alt="Profile photo">
+                            {user.displayName}
                             <b class="caret"></b></a>
     						<ul class="dropdown-menu">
     							<li><a href="/logout">Logout</a></li>
@@ -76,14 +76,14 @@
     							<li><a href="https://minside.dataporten">Min side (Dataporten)</a></li>
     						</ul>
     					</li>
-                    {{/user}}
+                    {/user}
 
 
-                    {{^user}}
+                    {^user}
                         <li class="uninett-login">
     						<a class="btn btn-default" href="/login" class="btn btn-default uninett-login-btn"><span class="glyphicon glyphicon-user uninett-fontColor-red"></span> Login</a>
     					</li>
-                    {{/user}}
+                    {/user}
 
 
 
