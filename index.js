@@ -22,7 +22,8 @@ nconf.argv()
     .defaults({
       http: {
         port: 8080,
-        enforceHTTPS: false
+        enforceHTTPS: false,
+        enableCache: false
       },
       dataporten: {
         enableAuthentication: false
@@ -52,11 +53,12 @@ app.enable('trust proxy');
 // app.engine('mustache', mustacheExpress(__dirname + '/views/partials', '.mustache'));
 // app.set('view engine', 'mustache');
 // app.set('views', __dirname + '/views');
-app.disable('view cache');
+// app.disable('view cache');
 
 // Use Dustjs as Express view engine
 app.engine('dust', dust.engine({
-  useHelpers: true
+  useHelpers: true,
+  cache: nconf.get('http:enableCache')
 }));
 app.set('view engine', 'dust');
 app.set('views', path.resolve(__dirname, './views'));
