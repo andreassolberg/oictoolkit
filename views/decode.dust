@@ -1,5 +1,4 @@
-{{> header}}
-
+{> "partials/header" /}
 
 <div class="container">
 
@@ -9,7 +8,7 @@
 
             <div class="jumbotron uninett-color-lightBlue">
 
-                <h1>{{ pagetitle }}</h1>
+                <h1>{pagetitle}</h1>
                 <p>Include a trust root and an encoded Metadata Statement below.</p>
 
             </div>
@@ -48,7 +47,4 @@
 </div>
 
 
-
-
-
-{{> footer}}
+{> "partials/footer" /}

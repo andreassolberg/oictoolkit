@@ -1,4 +1,4 @@
-{{> header}}
+{> "partials/header" /}
 
 
 <div class="container">
@@ -8,7 +8,7 @@
         <div class="col-lg-12">
 
             <div class="jumbotron uninett-color-lightBlue">
-                <h1>{{ title }}</h1>
+                <h1>{title}</h1>
                 <p>Resources for learning, understanding and developing OpenID Connect Fedartion.</p>
 
                 <p><a href="https://openid.net/specs/openid-connect-federation-1_0.html">OpenID Connect Federation 1.0 - draft 01 </a></p>
@@ -28,4 +28,4 @@
 </div>
 
 
-{{> footer}}
+{> "partials/footer" /}

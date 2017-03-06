@@ -6,12 +6,11 @@
     <div class="row">
         <div class="col-lg-12">
 
+<!--
             <pre>
                 {mslistdataJSON}
             </pre>
-
-
-
+-->
             <div class="jumbotron uninett-color-lightBlue">
 
                 <h1>{pagetitle}</h1>
@@ -56,9 +55,6 @@
     </div>
 
 </div>
-
-
-
 
 
 {> "partials/footer" /}

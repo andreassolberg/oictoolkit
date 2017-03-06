@@ -25,10 +25,7 @@
 
     {^leafNode}
         {#metadata_statements}
-
-            {id} issued by {iss}
             {> "partials/MetadataStatement" /}
-
         {/metadata_statements}
     {/leafNode}
 
