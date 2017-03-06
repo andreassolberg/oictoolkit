@@ -19,12 +19,12 @@ const ms = fs.readFileSync('./var/example-ms.txt', 'utf8');
 // const jwks = JSON.parse(fs.readFileSync('./var/example-jwks.json', 'utf8'));
 const keystore = jose.JWK.createKeyStore();
 
-var m = new MetadataStatement('x', MetadataStatement.getPayload(ms), keystore);
+const m = new MetadataStatement('x', MetadataStatement.getPayload(ms), keystore);
 m.getKeystore()
   .then((k) => {
     console.log('----- Result ----');
     console.log(k);
-  })
+  });
 
 // Promise.all(jwks.map(k => keystore.add(k)))
 //   .then(() => f.decode(keystore, ms))
