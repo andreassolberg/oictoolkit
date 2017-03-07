@@ -16,7 +16,7 @@ const MetadataStatementEncoded = require('./lib/MetadataStatementEncoded');
 //     console.error(err);
 //   });
 
-const ms = fs.readFileSync('./var/example-ms.txt', 'utf8');
+const ms = fs.readFileSync('./var/example-ms2.txt', 'utf8');
 const jwks = JSON.parse(fs.readFileSync('./var/example-jwks.json', 'utf8'));
 const keystore = jose.JWK.createKeyStore();
 const msEncoded = new MetadataStatementEncoded(ms);
@@ -28,7 +28,7 @@ const msEncoded = new MetadataStatementEncoded(ms);
 //     console.log(k);
 //   });
 
-console.log("----");
+
 console.log(msEncoded);
 
 Promise.all(jwks.map(k => keystore.add(k)))
