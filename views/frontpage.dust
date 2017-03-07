@@ -16,7 +16,7 @@
             </div>
 
             <div class="uninett-color-white uninett-padded gutter">
-                <p><a href="/ms">Generate Metadata Statements</a></p>
+                <p><a href="/generate">Generate Metadata Statements</a></p>
                 <p><a href="/decode">Decode Metadata Statements</a></p>
             </div>
 
