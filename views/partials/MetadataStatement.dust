@@ -6,7 +6,7 @@
 
     <dl class="dl-horizontal">
         {#plain}
-            <dt>X{key}</dt>
+            <dt>{key}</dt>
             {#value}
                 <dd>{value}</dd>
             {/value}
@@ -29,7 +29,9 @@
         {/metadata_statements}
     {/leafNode}
 
+    {?signed}
     <pre style="word-wrap: break-word; white-space: normal; max-height: 6em">{signed}</pre>
+    {/signed}
 
     <p>The MetadataStatement as an JWT above is <span class="label label-success"><i class="fa fa-certificate" aria-hidden="true"></i> signed by {iss}</span></p>
 

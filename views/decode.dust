@@ -18,19 +18,12 @@
                 <form class="" action="?" method="post">
                     <div class="form-group">
                         <label for="jwks">Trust root JWKS</label>
-                        <textarea id="jwks" class="form-control" name="jwks" rows="8">[
-  {
-    "kty": "RSA",
-    "kid": "https://edugain.org/",
-    "n": "l7rt1yRvbiOKg8XeP_ICo0yDif-kOLWkUL5FAWKVWhWWAdnN2o1t_otuBX1xLeItE24he4qGHBzh2PQ4SRqau6ZVzx4-aJFzGZSbw6SswVXPlFR5dRkJMn4wxFOOVsSUnltO4K27X2Pf-gwlLFdH4q4QTNU5U8ijr76BnuUThdBYrxf2UQT7DDz6cPHaRdOUbuj_Ids9CmV6HyzdIFOfBx7DKS8o2fqH9Fa6-PKdMtDJiZ1KfjgstiNB04JAbQ1RI9Bl-No6NTUcZbD7Q0JF8iqY3Hogo9J_mL-SgQFGgwAoxQKoNeLk7uLHc69yIlyBJegrVkmHUKehIp3OZ5CW9w",
-    "e": "AQAB"
-  }
-]</textarea>
+                        <textarea id="jwks" class="form-control" name="jwks" rows="8">{exampleJWKS|s}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="ms">Signed metadata statement (encoded JWS)</label>
-                        <textarea id="ms" class="form-control" name="ms" rows="8">eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Imh0dHBzOi8vZmVpZGUubm8vIn0.eyJjbGllbnRfbmFtZSI6IkZvb2RsZSBwb2xscyBhbmQgc3VydmV5cyIsImNvbnRhY3RzIjpbImFuZHJlYXMuc29sYmVyZ0B1bmluZXR0Lm5vIiwia29udGFrdEB1bmluZXR0Lm5vIl0sInJlZGlyZWN0X3VyaXMiOlsiaHR0cHM6Ly9mb29kbC5vcmcvY2FsbGJhY2siLCJodHRwczovL3d3dy5mb29kbC5vcmcvY2FsbGJhY2siXSwicmVzcG9uc2VfdHlwZXMiOlsiY29kZSJdLCJjbGFpbXMiOlsic3ViIiwibmFtZSIsInBpY3R1cmUiXSwiaXNzIjoiaHR0cHM6Ly9mZWlkZS5uby8iLCJzaWduaW5nX2tleXMiOlt7Imt0eSI6IlJTQSIsImtpZCI6Imh0dHBzOi8vZm9vZGwub3JnLyIsIm4iOiJ5bFdpZlhpbEczSlBEeDYwbWoxMng4c0pzeVlvWWZLcnlMdE5JVDAwR2oyd1hpUWlPNHVhUGlYTXZzRnltck5nZHBLUGtNVGlNRG5kYWVWWTFjSlc0NVRKRDAzbGQxTVZIc2tVdnJBREh3QTZKcXpLYV9qVlZlWjdFaGtsdzlXWjlFZDB5NnloUm9rS2xNSGpmY3RPQlVORXhoM3FmY0VUQ0N0Q0JIWWhWS0VMUFZVRWRlZ3lTWXFsTlB5QjlzR2xhdTY3UFFlMmdpMHRhWUstUXZnN1h3c29FTDJsUnNnS185R25FYjZQSEp2M2FrNlhkUTJSX0VnbDUtTTRxMV9xcEFKWXNNRTR4TnZVdXpqcVo5Z05ZSVJmUk5tWDhoMElwemZ6cnp2QjNhRFhLMktWb0V0N0JoSVBiYmNXYTk5dG5xODJNUW82c09lNVNIRk1uRjhGUVEiLCJlIjoiQVFBQiJ9XSwibWV0YWRhdGFfc3RhdGVtZW50cyI6WyJleUpoYkdjaU9pSlNVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltaDBkSEJ6T2k4dlpXUjFaMkZwYmk1dmNtY3ZJbjAuZXlKamJHRnBiWE1pT2xzaWMzVmlJaXdpYm1GdFpTSXNJbVZ0WVdsc0lpd2ljR2xqZEhWeVpTSmRMQ0pwWkY5MGIydGxibDl6YVdkdWFXNW5YMkZzWjE5MllXeDFaWE5mYzNWd2NHOXlkR1ZrSWpwYklsSlRNalUySWl3aVVsTTFNVElpWFN3aWFYTnpJam9pYUhSMGNITTZMeTlsWkhWbllXbHVMbTl5Wnk4aUxDSnphV2R1YVc1blgydGxlWE1pT2x0N0ltdDBlU0k2SWxKVFFTSXNJbXRwWkNJNkltaDBkSEJ6T2k4dlptVnBaR1V1Ym04dklpd2liaUk2SWpVeFJtTTVZVmhCTlRjMmNUazRlRUYzY2xReWNteEdiVUpyYzFRdE9UUktaRjh3YUd4Q2VXWlFORjlMT0VOMVRFSlVUVGhJUTJ4cFptUjNaVlJHWkZWa1UybENORFJsZEVNMldVeFJja3BGU1hsQ1dsOTRMVWRwUlhJMWIwMVNUbXh6TmtoWGJWZHViRUo0WVVSQlZURTJlbTVJVVRBMlJtRnJRWEoyUVZab2JrVmtUblY1TmpWblp6bFNNa2xCWnpGU2MxZENRV0Z3ZHpSbVZrWlRlWFpOVWt0bFMxTlVNWHBDV1ZZM04zTmxhVTlXYVVSSFozSjVkM2hDUTNkbmVqZFlSbGN6ZEdsNFVGcElRbTgyVG5FelIxVkZkMnBvWTFSTExXSkpOaTB6YlZVeldUSkJlREJTTjFNemFuSk9abEJMUlhWcE1FOXRZMkpKWlhGa2RTMUtUMlp2VEZGR1ZFOWZORTR0WWtKb1ZYcFhhR2RxUVZrMFdsbFdSR1ZQVWxSZlNIUlVkMVppZDBrMGVEZzRUbnBIVDBOeWVWcHFaVlpVU0RONE9FSmxWV0ZKYTNaVFJIbGtZMGxzWkZkS2IyaDRiRVZwZHlJc0ltVWlPaUpCVVVGQ0luMWRMQ0pwWVhRaU9qRTBPRGM1TkRBNE1UZ3NJbVY0Y0NJNk1UUTROemswTkRReE9Dd2lZWFZrSWpvaWFIUjBjSE02THk5bVpXbGtaUzV1Ynk4aWZRLk1raHB2X0JUanJWeVFRRjUtek1wWGc2anBJaC1SVmlscVByR29YWmRiQjRsTWI4UkhUUm9qbHY5WmxielVOOXJwWnpVWjFjbEtNaXUxdXhxUnRNam9NdnRGd2hhODBGQW5rbWFYODBkMFZvb0txeGdDakNfdERoaHFIb0x2bWFxMmZraXMxZ0k4WFMtQk5qUjdJZEhpZDhjcV9tTWJaQ2c0TURzeFR5RG41WU02cjZJQ3lCVnI4Qy1mVjhLMG85V1FVTURmSkpYZ2JwbXNXVXZWSC1HUVd1Y2NPaWtGYXcxMDZIckJLdnlFbVJfMWtFQm1BQzhDVExib1l0cEJ5Y3NXUlJtOUhWR0JubDcyN0h6NThYUTI1aVBrRk5nc3drd0JTOC05X1c4MkZTQnBNUkdJMEVLRzlZZEFXXzl4TUw5bnNMVnhFX0VfYzBDTVBOazVONGlOdyIsImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1oMGRIQnpPaTh2YTJGc2JXRnlMbTl5Wnk4aWZRLmV5SmpiR0ZwYlhNaU9sc2ljM1ZpSWl3aWJtRnRaU0pkTENKcFpGOTBiMnRsYmw5emFXZHVhVzVuWDJGc1oxOTJZV3gxWlhOZmMzVndjRzl5ZEdWa0lqcGJJbEpUTWpVMklsMHNJbWx6Y3lJNkltaDBkSEJ6T2k4dmEyRnNiV0Z5TG05eVp5OGlMQ0p6YVdkdWFXNW5YMnRsZVhNaU9sdDdJbXQwZVNJNklsSlRRU0lzSW10cFpDSTZJbWgwZEhCek9pOHZhMkZzYldGeUxtOXlaeThpTENKdUlqb2ljRTgwWm1nelVqaDVRbEJxYW5CQk1XdGxUV2N5YmtSRFJEZFFZVVJ5WVhGTE5WZHVORTg0U2w5eWRFWm5aMTlDWldneFZWRm1ObGt4ZVhsV1QydFFSR2RyT1hwSmRuaDBRa3hJUVRkZlFVaHBSWFpETUY5d1NGTjZTazVzY0hCV2FIVnFWV2c0ZVZaS2NuaGhXVVJ4ZDBsTk1XZzBTamg0YjNGb2ExQnFSVXhyUjFnMFgycFBjbEV6UkZWVVdGTnJNRUpyUjJWbGVYaFlPRzR0YVRkMVVrRTRWVWREZVZvdE56UlhlRU5SU3pSd1N5MHdia1pwWHpZd2NGaFlPRGRpZVhCelZIaDRkRmhRTWtGM1JWOVhRV3hJWHpkM2FWTm9lalYxZVhsWlRVZFNlR1UxVkhoRmJ6Tk9XblY1VFhCc2VqRkxUMjV3VlRSWlJWVkJiMloyYW1aaFptcHlSbE5uZGxWd1lsWmhORmRZWlc5WGEySldNbE5mWmtsTU5YTmhNMFZGUzA4M2NVdHRWRWhvZDNoT1kwTjJlRzVzVVVKNFMwNDRXbnBWYkZKRU1HNTZiVU5CZFVWYVZrSm5NbEZKVjJwbVVFaFJJaXdpWlNJNklrRlJRVUlpZlYwc0ltbGhkQ0k2TVRRNE56azBNRGd4T0N3aVpYaHdJam94TkRnM09UUTBOREU0TENKaGRXUWlPaUpvZEhSd2N6b3ZMMlpsYVdSbExtNXZMeUo5LkU5Z0ZGdVpLNXp1dDc2SmtJOHQyMEFiNDdHZTBVeV90NS05Wl93ZWxTVWlCMU9Kb2NPQVJrZnU5R3R2Z0xoZGpPUTdfLXZkWGY2WGd3YnRBeE1RTTRHUUE3ZUNITTA4WHk5bG5NM0FhN19JTVFuRUI2V1NFcTZvOS1mQ1FTTVprOWhTblltUno0bFk1RFlOcUpJeG5iRUt5ZTVNTUUwLUM4TVd4ZXdnbW93Y0RHSXl4NkVYLVJqMTg4cGNRV09ud0Q2YmJGc0pBd0ZMejI3TTdGeHVteHUwaGd1elpRc3FlTEtOeG1uVmNiam83WF9zeFpXdVBtVFQ4Ni00NEtDT2pGSkJ3SkpJRGl4SlFVY1ItXzBWb1J1MEtkWS1veHpMZDF1ZTIySDVDeW94RXl1MGJIUGlMLXk2YVNMU1UzNGZ0VW1oTVN2UEN0TjZRUDFmaVNlOEE4USJdLCJpYXQiOjE0ODc5NDA4MTgsImV4cCI6MTQ4Nzk0NDQxOH0.Iex2wh2eBbl7_8fLzBRTXwNBzFVPRwlVvoKUd3SjJB63UCY6ELADfEMPjrkg25GtjUzW4lqwiQbV4Hzk7iKWk6fQc1nw_efvxtV6PX2G0vQEjEg1FM67UaGMkBkVtExfBoWQ-moAmZcms72AFvjRLdrbVdKyDGHKvY2AzrNvXOCGdQG6-T4ff4d4DyA2l2p3pknQn4IEJflbp8mpq1MkEn84cLXLRbwatHSiwOjWNsIyTTWwOGNrcOpMMDhgxh22rQPgKZJpLEmc6-8GNIMR76kRM4l5Sag22bxDVnMAKORsxC3VsHoxLFMF9GeU9iPkoAgo3HWAzXw2aeZESZLfXg</textarea>
+                        <textarea id="ms" class="form-control" name="ms" rows="8">{exampleMS|s}</textarea>
                     </div>
 
                     <div style="text-align: center">
@@ -38,6 +31,39 @@
                     </div>
 
                 </form>
+
+            </div>
+
+
+            <div class="uninett-color-white uninett-padded gutter">
+
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    {#mslistindex}
+                        <li role="presentation" class="{@first}active{/first}"><a href="#ms{$idx}" role="tab" data-toggle="tab">{.}</a></li>
+                    {/mslistindex}
+                </ul>
+
+
+                <div class="tab-content">
+                {#mslistdata}
+                    <div role="tabpanel" class="tab-pane {@first}active{/first}" id="ms{$idx}">
+                        <h2>Metadata statement</h2>
+                        <p>Available paths:</p>
+                        <ol>
+                            {#pathsJSON}
+                                <li><pre>{.}</pre></li>
+                            {/pathsJSON}
+                        </ol>
+
+                        {#structured}
+                        {> "partials/MetadataStatement" /}
+                        {/structured}
+                    </div>
+
+                {/mslistdata}
+                </div>
 
             </div>
 
