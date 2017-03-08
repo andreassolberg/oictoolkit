@@ -28,8 +28,8 @@ Promise.all(jwks.map(k => keystore.add(k)))
   .then(() => msEncoded.decode(keystore))
   .then((result) => {
     log.info('----- Result ----');
-    log.info(keystore.all());
-    log.info(result);
+    log.info(keystore.all(), 'Resulting keystore');
+    log.info(result.map(r => r.toJSON()));
   })
   .catch((err) => {
     log.error(err, 'Error');
