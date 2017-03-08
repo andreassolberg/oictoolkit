@@ -7,8 +7,6 @@
     "strict": "off",
     "no-plusplus": "off",
 
-
-    "no-console": "off",
     "comma-dangle": "off"
   }
 }
