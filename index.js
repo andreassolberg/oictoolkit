@@ -12,8 +12,9 @@ const path = require('path');
 
 const App = require('./lib/App');
 const Health = require('./lib/Health').Health;
-// const MetadataStatement = require('./lib/MetadataStatement');
+const Logger = require('./lib/Logger');
 
+const log = Logger.getLogger();
 const app = express();
 
 nconf.argv()
@@ -30,7 +31,7 @@ nconf.argv()
       }
     });
 
-const shouldRedirect = function (req) {
+function shouldRedirect(req) {
   if (req.headers['user-agent'] && req.headers['user-agent'].match(/GoogleHC/)) {
     return false;
   }
@@ -41,7 +42,7 @@ const shouldRedirect = function (req) {
     return false;
   }
   return true;
-};
+}
 
 const dpsetup = new Dataporten.Setup(nconf.get('dataporten'));
 const doAuth = nconf.get('dataporten:enableAuthentication');
@@ -79,7 +80,7 @@ app.use((req, res, next) => {
   if (shouldRedirect(req)) {
     return res.redirect('https://' + req.get('host') + req.originalUrl);
   }
-  next();
+  return next();
 });
 
 if (doAuth) {
@@ -117,5 +118,5 @@ app.get('*', function(req, res) {
 
 
 app.listen(app.get('port'), function() {
-	console.log('Node app is running on port', app.get('port'));
+  log.info('Node app is running on port ' + app.get('port'));
 });

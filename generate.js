@@ -7,7 +7,9 @@ const prettyjson = require('prettyjson');
 const Federation = require('./lib/Federation');
 const MetadataStatement = require('./lib/MetadataStatement');
 const MetadataStatementEncoded = require('./lib/MetadataStatementEncoded');
+const Logger = require('./lib/Logger');
 
+const log = Logger.getLogger();
 const f = new Federation();
 
 f.setupKeys()
@@ -15,16 +17,13 @@ f.setupKeys()
     return f.getMS();
   })
   .then((signed) => {
-    console.log('---- Signed MS ----');
+    log.info('---- Signed MS ----');
     signed.forEach((ms) => {
-      console.log('');
-      console.log('   -----> Metadata Statement <-----');
-      console.log(prettyjson.render(ms.getPlainSingle()));
-      console.log('');
+      log.info(prettyjson.render(ms.getPlainSingle()), 'Metadata Statement');
     });
   })
   .catch((err) => {
-    console.error(err);
+    log.error(err, 'Error');
   });
 
 // const ms = fs.readFileSync('./var/example-ms.txt', 'utf8');

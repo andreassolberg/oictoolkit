@@ -5,7 +5,9 @@ const fs = require('fs');
 const jose = require('node-jose');
 // const MetadataStatement = require('./lib/MetadataStatement');
 const MetadataStatementEncoded = require('./lib/MetadataStatementEncoded');
+const Logger = require('./lib/Logger');
 
+const log = Logger.getLogger();
 // const f = new Federation();
 
 // f.setupKeys()
@@ -21,23 +23,14 @@ const jwks = JSON.parse(fs.readFileSync('./var/example-jwks.json', 'utf8'));
 const keystore = jose.JWK.createKeyStore();
 const msEncoded = new MetadataStatementEncoded(ms);
 
-// const m = new MetadataStatement('x', MetadataStatement.getPayload(ms), keystore);
-// m.getKeystore()
-//   .then((k) => {
-//     console.log('----- Result ----');
-//     console.log(k);
-//   });
-
-
-console.log(msEncoded);
-
+log.info(msEncoded.toJSON(), 'Encoded Metadata Statement');
 Promise.all(jwks.map(k => keystore.add(k)))
   .then(() => msEncoded.decode(keystore))
   .then((result) => {
-    console.log('----- Result ----');
-    console.log(keystore.all());
-    console.log(result);
+    log.info('----- Result ----');
+    log.info(keystore.all());
+    log.info(result);
   })
   .catch((err) => {
-    console.error('Error', err);
+    log.error(err, 'Error');
   });

@@ -3,6 +3,9 @@
 <div class="container">
 
 
+
+
+
     <div class="row">
         <div class="col-lg-12">
 
@@ -12,6 +15,26 @@
                 <p>Include a trust root and an encoded Metadata Statement below.</p>
 
             </div>
+
+
+
+
+            {#error}
+            <div class="panel panel-danger" style="margin-top: 2em">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><i class="fa fa-warning fa-2x"></i> Error decoding Metadata Statement: {title}</h3>
+                </div>
+                <div class="panel-body">
+                    {#entries}
+                        <p>{title}</p>
+                        <pre style="margin: .2em">{value}</pre>
+                    {/entries}
+                </div>
+
+
+            </div>
+            {/error}
+
 
             <div class="uninett-color-white uninett-padded gutter">
 
