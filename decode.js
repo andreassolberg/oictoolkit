@@ -3,7 +3,7 @@
 const fs = require('fs');
 // const Federation = require('./lib/Federation');
 const jose = require('node-jose');
-// const MetadataStatement = require('./lib/MetadataStatement');
+const MetadataStatement = require('./lib/MetadataStatement');
 const MetadataStatementEncoded = require('./lib/MetadataStatementEncoded');
 const Logger = require('./lib/Logger');
 

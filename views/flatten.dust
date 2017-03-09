@@ -1,0 +1,90 @@
+{> "partials/header" /}
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="jumbotron uninett-color-lightBlue">
+                <h1>{pagetitle}</h1>
+                <p>Include a trust root and an client registration request or discovery response.</p>
+            </div>
+
+
+            {#error}
+            <div class="panel panel-danger" style="margin-top: 2em">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><i class="fa fa-warning fa-2x"></i> Error decoding Metadata Statement: {title}</h3>
+                </div>
+                <div class="panel-body">
+                    {#entries}
+                        <p>{title}</p>
+                        <pre style="margin: .2em">{value}</pre>
+                    {/entries}
+                </div>
+            </div>
+            {/error}
+
+
+            <div class="uninett-color-white uninett-padded gutter">
+
+                <form class="" action="?" method="post">
+                    <div class="form-group">
+                        <label for="jwks">Trust root JWKS</label>
+                        <textarea id="jwks" class="form-control" name="jwks" rows="8">{exampleJWKS|s}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Client registration request or Discovery response (JSON format)</label>
+                        <textarea id="message" class="form-control" name="message" rows="14">{exampleR|s}</textarea>
+                    </div>
+
+                    <div style="text-align: center">
+                        <input type="submit" class="btn btn-primary btn-large" value="Flatten"/>
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <div class="uninett-color-white uninett-padded gutter">
+
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    {#mslistindex}
+                        <li role="presentation" class="{@first}active{/first}"><a href="#ms{$idx}" role="tab" data-toggle="tab">{.}</a></li>
+                    {/mslistindex}
+                </ul>
+
+
+                <div class="tab-content">
+                {#mslistdata}
+                    <div role="tabpanel" class="tab-pane {@first}active{/first}" id="ms{$idx}">
+                        <h2>Metadata statement</h2>
+                        <p>Available paths:</p>
+                        <ol>
+                            {#pathsJSON}
+                                <li><pre>{.}</pre></li>
+                            {/pathsJSON}
+                        </ol>
+
+                        {#structured}
+                        {> "partials/MetadataStatement" /}
+                        {/structured}
+                    </div>
+
+                {/mslistdata}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+{> "partials/footer" /}
